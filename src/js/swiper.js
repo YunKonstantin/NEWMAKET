@@ -6,7 +6,7 @@ export function InitSwiper2(selector) {
   if (!sliderElement) return;
   if (screenWidth < 768) {
     const pagination = sliderElement.querySelector(".swiper-pagination");
-    const swiper = new Swiper(selector, {
+    const swiper = new Swiper(".slider", {
       // Initialize Swiper
       slidesPerView: "auto", // Display 1.5 slides per view
       spaceBetween: 16, // Space between slides

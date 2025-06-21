@@ -81,48 +81,48 @@ export function createPages() {
                 alt="go"
               />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${Samsung}" alt="Samsung" />
               <img src="${go}" alt="go" />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${Apple}" alt="Apple" />
               <img src="${go}" alt="go" />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${Viev}" alt="Viev" /><img
                 src="${go}"
                 alt="go"
               />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${Bosh}" alt="Bosh" />
               <img src="${go}" alt="go" />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${HP}" alt="HP" />
               <img src="${go}" alt="go" />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${Acer}" alt="Acer" />
               <img src="${go}" alt="go" />
             </div>
-            <div class="slide swiper-wrapper">
+            <div class="slide swiper-slide">
               <img src="${Sony}" alt="Sony" />
               <img src="${go}" alt="go" />
             </div>
 
-            <div class="slide extra swiper-wrapper">
+            <div class="slide extra swiper-slide">
               <img src="${Lenovo}" alt="Lenovo" /><img
                 src="${go}"
                 alt="go"
               />
             </div>
-            <div class="slide extra swiper-wrapper">
+            <div class="slide extra swiper-slide">
               <img src="${Samsung}" alt="Samsung" />
               <img src="${go}" alt="go" />
             </div>
-            <div class="slide extra swiper-wrapper">
+            <div class="slide extra swiper-slide">
               <img src="${Apple}" alt="Apple" />
               <img src="${go}" alt="go" />
             </div>
@@ -135,16 +135,17 @@ export function createPages() {
             />
             <button class="show-more-btn">Показать все</button>
           </div>
-          <div class="swiper__pagination"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>`;
        
-        const observer = new MutationObserver((mutations, obs) => {
-    if (document.querySelector('.slider-wrapper')) {
-      InitSwiper2('.slider-wrapper');
-      obs.disconnect(); // Останавливаем наблюдение после инициализации
-    }
-  });
+     const observer = new MutationObserver((mutations, obs) => {
+  const sliderWrapper = document.querySelector('.slider-wrapper');
+  if (sliderWrapper && sliderWrapper.querySelector('.slider')) {  // ← Проверяем оба элемента
+    InitSwiper2('.slider-wrapper');
+    obs.disconnect();
+  }
+});
 
   observer.observe(document.body, { childList: true, subtree: true });
   return pages;

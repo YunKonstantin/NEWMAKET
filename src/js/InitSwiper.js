@@ -1,6 +1,5 @@
 //ебливая логика! ЛЕРА ПРИВЕТ!!!
 
-
 let slidesContainer;
 let slides;
 let pagination;
@@ -31,7 +30,6 @@ export function initSwiper(selector) {
   setupEventListeners();
   return true;
 }
-
 
 function setupEventListeners() {
   // ТАЧ МОД ОН ЖЕ ТЫКАТЬ ПАЛЬЦАМИ
@@ -104,7 +102,7 @@ function createPagination() {
     bullet.addEventListener("click", () => {
       currentIndex = i;
       updateSlider();
-     // resetAutoplay();
+      // resetAutoplay();
       // Обновляем активный буллет
       document.querySelectorAll(".custom-bullet").forEach((el, idx) => {
         el.classList.toggle("custom-bullet--active", idx === i);
@@ -184,7 +182,7 @@ function handleTouchEnd(e) {
     currentIndex++;
   }
   updateSlider();
- // resetAutoplay();
+  // resetAutoplay();
 }
 
 function handleResize() {
@@ -206,7 +204,7 @@ function handleResize() {
   }
   createPagination();
   updateSlider();
- // resetAutoplay();
+  // resetAutoplay();
 }
 
 window.addEventListener("resize", handleResize);
