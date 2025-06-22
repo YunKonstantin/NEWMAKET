@@ -14,6 +14,7 @@ import Sony from "../assets/image/Sony.svg";
 import PictureCopy from '../assets/image/Picture Copy.svg';
 import { InitSwiper2 } from './swiper.js';
 
+
 export function createPages() {
   const pages = document.createElement("main");
   pages.className = "main";

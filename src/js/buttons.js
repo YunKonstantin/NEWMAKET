@@ -1,10 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
+export function initShowMore() {
   const button = document.querySelector(".show-more-btn");
   const arrow = document.querySelector(".show-more-img");
   const slides = document.querySelectorAll(".slides .slide");
   const slide7 = document.querySelector(".slides .slide:nth-child(7)");
   const slide8 = document.querySelector(".slides .slide:nth-child(8)");
-  const extraSlides = document.querySelectorAll(".slides .slide.extra");
+  const extraSlides = document.querySelectorAll(".slide extra swiper-slide");
   let isExpanded = false;
 
   function getMode() {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if (arrow) arrow.classList.toggle("rotate", isExpanded);
     } else {
-      slides.forEach((slide, idx) => {
+      slides.forEach((slide) => {
         if (!slide.classList.contains("extra")) slide.style.display = "flex";
       });
       extraSlides.forEach(
@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.addEventListener("resize", updateSlidesVisibility);
+  const resizeObserver = new ResizeObserver(() => {
+    updateSlidesVisibility();
+  });
+
+  resizeObserver.observe(document.documentElement);
   updateSlidesVisibility();
-});
+}
