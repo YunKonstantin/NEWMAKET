@@ -5,6 +5,7 @@ import highilight from '../assets/image/highilight.svg';
 import call from '../assets/image/call.svg';
 import chat from '../assets/image/chat.svg';
 import profile from '../assets/image/profile.svg';
+import { initBurgerMenu } from './burgerButtonOpenClose';
 
 export function createBurgerWrapper() {
   const burger = document.createElement("div");
@@ -121,5 +122,6 @@ export function createBurgerWrapper() {
           </div>
         </div>
       </div>`;
+      initBurgerMenu();
       return burger;
 }
