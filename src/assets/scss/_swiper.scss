@@ -5,6 +5,8 @@
   gap: 16px;
   padding-left: 16px;
 }
+
+
 .slider::after {
   content: "";
   position: absolute;
@@ -196,3 +198,4 @@
     transform: rotate(180deg);
   }
 }
+

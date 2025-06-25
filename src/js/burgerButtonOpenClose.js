@@ -6,7 +6,6 @@ export function initBurgerMenu() {
 
   // Более строгая проверка элементов
   if (!(menuToggle instanceof HTMLInputElement) || !overlay || !burgerMenu) {
-    console.error("Burger menu elements not found or invalid");
     return;
   }
 
