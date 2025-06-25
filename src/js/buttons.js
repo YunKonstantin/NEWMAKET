@@ -4,7 +4,7 @@ export function initShowMore() {
   const slides = document.querySelectorAll(".slides .slide");
   const slide7 = document.querySelector(".slides .slide:nth-child(7)");
   const slide8 = document.querySelector(".slides .slide:nth-child(8)");
-  const extraSlides = document.querySelectorAll(".slide extra swiper-slide");
+  const extraSlides = document.querySelectorAll(".slide.extra.swiper-slide");
   let isExpanded = false;
 
   function getMode() {
@@ -58,10 +58,11 @@ export function initShowMore() {
     });
   }
 
-  const resizeObserver = new ResizeObserver(() => {
-    updateSlidesVisibility();
-  });
+  // const resizeObserver = new ResizeObserver(() => {
+  //   updateSlidesVisibility();
+  // });
 
-  resizeObserver.observe(document.documentElement);
+  window.addEventListener("resize", updateSlidesVisibility);
   updateSlidesVisibility();
+
 }
